@@ -8,20 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		726EA6E6213FCE05005D8726 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA6E5213FCE05005D8726 /* AppDelegate.swift */; };
-		726EA6E8213FCE05005D8726 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA6E7213FCE05005D8726 /* ViewController.swift */; };
-		726EA6EB213FCE05005D8726 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 726EA6E9213FCE05005D8726 /* Main.storyboard */; };
-		726EA6ED213FCE06005D8726 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 726EA6EC213FCE06005D8726 /* Assets.xcassets */; };
-		726EA6F0213FCE06005D8726 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 726EA6EE213FCE06005D8726 /* LaunchScreen.storyboard */; };
+		726EA6F8213FD200005D8726 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 726EA6F7213FD200005D8726 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		726EA6E2213FCE05005D8726 /* 新浪微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新浪微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		726EA6E5213FCE05005D8726 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		726EA6E7213FCE05005D8726 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		726EA6EA213FCE05005D8726 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		726EA6EC213FCE06005D8726 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		726EA6EF213FCE06005D8726 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		726EA6F1213FCE06005D8726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		726EA6F7213FD200005D8726 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				726EA6E5213FCE05005D8726 /* AppDelegate.swift */,
-				726EA6E7213FCE05005D8726 /* ViewController.swift */,
-				726EA6E9213FCE05005D8726 /* Main.storyboard */,
-				726EA6EC213FCE06005D8726 /* Assets.xcassets */,
-				726EA6EE213FCE06005D8726 /* LaunchScreen.storyboard */,
+				726EA6F7213FD200005D8726 /* Assets.xcassets */,
 				726EA6F1213FCE06005D8726 /* Info.plist */,
 			);
 			path = "新浪微博";
@@ -90,6 +81,7 @@
 		726EA6DA213FCE05005D8726 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = WB;
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = ljw;
@@ -122,9 +114,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				726EA6F0213FCE06005D8726 /* LaunchScreen.storyboard in Resources */,
-				726EA6ED213FCE06005D8726 /* Assets.xcassets in Resources */,
-				726EA6EB213FCE05005D8726 /* Main.storyboard in Resources */,
+				726EA6F8213FD200005D8726 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,31 +125,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				726EA6E8213FCE05005D8726 /* ViewController.swift in Sources */,
 				726EA6E6213FCE05005D8726 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		726EA6E9213FCE05005D8726 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				726EA6EA213FCE05005D8726 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		726EA6EE213FCE06005D8726 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				726EA6EF213FCE06005D8726 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		726EA6F2213FCE06005D8726 /* Debug */ = {
@@ -280,14 +250,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SH3N75AN8Y;
 				INFOPLIST_FILE = "新浪微博/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.zwu.2017.----";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.zwu.2017.weibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -298,14 +270,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SH3N75AN8Y;
 				INFOPLIST_FILE = "新浪微博/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.zwu.2017.----";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.zwu.2017.weibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
