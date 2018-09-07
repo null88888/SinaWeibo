@@ -14,6 +14,7 @@ class WBMainViewController: UITabBarController {
         super.viewDidLoad()
 
         setupChildViewControllers()
+        view.backgroundColor = UIColor.cz_random()
 
     }
 
@@ -30,10 +31,10 @@ extension WBMainViewController {
     /// 设置所有子控制器
     private func setupChildViewControllers() {
         let array = [
-            ["clsName": "WBHomeViewController", "title": "首页", "imageName": ""],
-            ["clsName": "WBMessageViewController", "title": "消息", "imageName": ""],
-            ["clsName": "WBDiscoverViewController", "title": "发现", "imageName": ""],
-            ["clsName": "WBProfileViewController", "title": "我的", "imageName": ""]
+            ["clsName": "WBHomeViewController", "title": "首页", "imageName": "tabbar_home"],
+            ["clsName": "WBMessageViewController", "title": "消息", "imageName": "tabbar_message_center"],
+            ["clsName": "WBDiscoverViewController", "title": "发现", "imageName": "tabbar_discover"],
+            ["clsName": "WBProfileViewController", "title": "我的", "imageName": "tabbar_profile"]
         ]
         
         var arrayM = [UIViewController]()
@@ -65,6 +66,9 @@ extension WBMainViewController {
         //创建视图控制器
         let vc = cls.init()
         vc.title = title;
+        vc.tabBarItem.image = UIImage(named: imageName)
+        vc.tabBarItem.selectedImage = UIImage(named: imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
+        
         let nav = WBBaseNavigationController(rootViewController: vc)
         
         return nav
