@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		726EA6E6213FCE05005D8726 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA6E5213FCE05005D8726 /* AppDelegate.swift */; };
 		726EA6F8213FD200005D8726 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 726EA6F7213FD200005D8726 /* Assets.xcassets */; };
+		72966DAE2142454A00EB0A8D /* WBBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72966DAD2142454A00EB0A8D /* WBBaseNavigationController.swift */; };
+		72966DB22142464B00EB0A8D /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72966DB12142464B00EB0A8D /* WBMainViewController.swift */; };
+		72966DB42142466100EB0A8D /* WBBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72966DB32142466100EB0A8D /* WBBaseViewController.swift */; };
+		72966DB62142468800EB0A8D /* WBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72966DB52142468800EB0A8D /* WBHomeViewController.swift */; };
+		72966DB82142469300EB0A8D /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72966DB72142469300EB0A8D /* WBMessageViewController.swift */; };
+		72966DBA2142469E00EB0A8D /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72966DB92142469E00EB0A8D /* WBDiscoverViewController.swift */; };
+		72966DBC214246A800EB0A8D /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72966DBB214246A800EB0A8D /* WBProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +23,13 @@
 		726EA6E5213FCE05005D8726 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		726EA6F1213FCE06005D8726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		726EA6F7213FD200005D8726 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		72966DAD2142454A00EB0A8D /* WBBaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBBaseNavigationController.swift; sourceTree = "<group>"; };
+		72966DB12142464B00EB0A8D /* WBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMainViewController.swift; sourceTree = "<group>"; };
+		72966DB32142466100EB0A8D /* WBBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBBaseViewController.swift; sourceTree = "<group>"; };
+		72966DB52142468800EB0A8D /* WBHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBHomeViewController.swift; sourceTree = "<group>"; };
+		72966DB72142469300EB0A8D /* WBMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
+		72966DB92142469E00EB0A8D /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
+		72966DBB214246A800EB0A8D /* WBProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +65,95 @@
 				726EA6E5213FCE05005D8726 /* AppDelegate.swift */,
 				726EA6F7213FD200005D8726 /* Assets.xcassets */,
 				726EA6F1213FCE06005D8726 /* Info.plist */,
+				72966DA12142422500EB0A8D /* Classes */,
 			);
 			path = "新浪微博";
+			sourceTree = "<group>";
+		};
+		72966DA12142422500EB0A8D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				72966DA52142422500EB0A8D /* View */,
+				72966DA22142422500EB0A8D /* ViewModels */,
+				72966DA42142422500EB0A8D /* Models */,
+				72966DA32142422500EB0A8D /* Tools */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		72966DA22142422500EB0A8D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		72966DA32142422500EB0A8D /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		72966DA42142422500EB0A8D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		72966DA52142422500EB0A8D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				72966DAA2142422500EB0A8D /* Main */,
+				72966DA62142422500EB0A8D /* Home */,
+				72966DA92142422500EB0A8D /* Message */,
+				72966DA72142422500EB0A8D /* Discover */,
+				72966DA82142422500EB0A8D /* Profile */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		72966DA62142422500EB0A8D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				72966DB52142468800EB0A8D /* WBHomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		72966DA72142422500EB0A8D /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				72966DB92142469E00EB0A8D /* WBDiscoverViewController.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		72966DA82142422500EB0A8D /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				72966DBB214246A800EB0A8D /* WBProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		72966DA92142422500EB0A8D /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				72966DB72142469300EB0A8D /* WBMessageViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		72966DAA2142422500EB0A8D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				72966DAD2142454A00EB0A8D /* WBBaseNavigationController.swift */,
+				72966DB12142464B00EB0A8D /* WBMainViewController.swift */,
+				72966DB32142466100EB0A8D /* WBBaseViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +226,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72966DB42142466100EB0A8D /* WBBaseViewController.swift in Sources */,
+				72966DBC214246A800EB0A8D /* WBProfileViewController.swift in Sources */,
+				72966DBA2142469E00EB0A8D /* WBDiscoverViewController.swift in Sources */,
+				72966DAE2142454A00EB0A8D /* WBBaseNavigationController.swift in Sources */,
+				72966DB62142468800EB0A8D /* WBHomeViewController.swift in Sources */,
 				726EA6E6213FCE05005D8726 /* AppDelegate.swift in Sources */,
+				72966DB22142464B00EB0A8D /* WBMainViewController.swift in Sources */,
+				72966DB82142469300EB0A8D /* WBMessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
