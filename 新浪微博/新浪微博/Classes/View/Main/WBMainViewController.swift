@@ -14,10 +14,7 @@ class WBMainViewController: UITabBarController {
         super.viewDidLoad()
 
         setupChildViewControllers()
-        view.backgroundColor = UIColor.cz_random()
-
     }
-
 }
 
 // extension 类似于OC中的 分类， 在Swift中还可以用来分割代码
@@ -43,7 +40,6 @@ extension WBMainViewController {
         }
         
         viewControllers = arrayM
-        
     }
     
     
@@ -68,6 +64,13 @@ extension WBMainViewController {
         vc.title = title;
         vc.tabBarItem.image = UIImage(named: imageName)
         vc.tabBarItem.selectedImage = UIImage(named: imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
+        
+        //设置字体大小  Swift4.0 将 NSForegroundColorAttribute 系列替换为NSAttributedStringKey.foregroundColor 等方式
+       vc.tabBarItem.setTitleTextAttributes(
+            [NSAttributedStringKey.foregroundColor:UIColor.orange], for: .highlighted)
+       vc.tabBarItem.setTitleTextAttributes(
+            [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12)],
+            for: .normal)
         
         let nav = WBBaseNavigationController(rootViewController: vc)
         
