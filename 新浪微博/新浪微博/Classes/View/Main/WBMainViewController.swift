@@ -18,6 +18,12 @@ class WBMainViewController: UITabBarController {
         
     }
     
+    // 撰写微博点击事件
+    // FIXME: 没有实现
+    @objc private func composeStatus() {
+        print("撰写微博")
+    }
+    
     // MARK: - 私有控件
     private lazy var composeButton: UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button")
 }
@@ -37,7 +43,7 @@ extension WBMainViewController {
         //计算出每个tabBarItem的宽度，在第三个位置插入，需要 -1 覆盖容错点，否则有几率点击到背后的按钮
         let width = tabBar.bounds.width / CGFloat(childViewControllers.count) - 1
         composeButton.frame = tabBar.bounds.insetBy(dx: width * 2, dy: 0)
-        
+        composeButton.addTarget(self, action: #selector(composeStatus), for: .touchUpInside)
     }
     
     /// 设置所有子控制器
