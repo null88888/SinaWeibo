@@ -14,7 +14,12 @@ class WBMainViewController: UITabBarController {
         super.viewDidLoad()
 
         setupChildViewControllers()
+        setupComposeButton()
+        
     }
+    
+    // MARK: - 私有控件
+    private lazy var composeButton: UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button")
 }
 
 // extension 类似于OC中的 分类， 在Swift中还可以用来分割代码
@@ -24,12 +29,24 @@ class WBMainViewController: UITabBarController {
 // MARK: - 设置界面
 extension WBMainViewController {
     
+    //设置编撰按钮
+    private func setupComposeButton() {
+        tabBar.addSubview(composeButton)
+        
+        //不同类型不能进行计算（Int / CGFloat）
+        //计算出每个tabBarItem的宽度，在第三个位置插入，需要 -1 覆盖容错点，否则有几率点击到背后的按钮
+        let width = tabBar.bounds.width / CGFloat(childViewControllers.count) - 1
+        composeButton.frame = tabBar.bounds.insetBy(dx: width * 2, dy: 0)
+        
+    }
     
     /// 设置所有子控制器
     private func setupChildViewControllers() {
         let array = [
             ["clsName": "WBHomeViewController", "title": "首页", "imageName": "tabbar_home"],
             ["clsName": "WBMessageViewController", "title": "消息", "imageName": "tabbar_message_center"],
+            //中间添加一个空的UIViewController，用于添加composeButton
+            ["clsName": "UIViewController", "title": "", "imageName": ""],
             ["clsName": "WBDiscoverViewController", "title": "发现", "imageName": "tabbar_discover"],
             ["clsName": "WBProfileViewController", "title": "我的", "imageName": "tabbar_profile"]
         ]
