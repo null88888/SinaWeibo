@@ -95,6 +95,7 @@ extension WBMainViewController {
             [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12)],
             for: .normal)
         
+        // 实例化导航控制器的时候， 会调用 push 方法将rootVC 压栈
         let nav = WBBaseNavigationController(rootViewController: vc)
         
         return nav

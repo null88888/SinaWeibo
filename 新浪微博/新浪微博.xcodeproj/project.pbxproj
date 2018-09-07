@@ -29,6 +29,7 @@
 		72966DE121424A0700EB0A8D /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = 72966DD421424A0700EB0A8D /* NSAttributedString+CZAdditon.m */; };
 		72966DE221424A0700EB0A8D /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 72966DD521424A0700EB0A8D /* NSArray+Log.m */; };
 		72966DE62142500200EB0A8D /* Bundle + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72966DE52142500200EB0A8D /* Bundle + extension.swift */; };
+		72966DE921426B8A00EB0A8D /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72966DE821426B8A00EB0A8D /* WBDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		72966DD621424A0700EB0A8D /* NSString+CZPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZPath.h"; sourceTree = "<group>"; };
 		72966DE321424AB100EB0A8D /* WeiBo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeiBo-Bridge.h"; sourceTree = "<group>"; };
 		72966DE52142500200EB0A8D /* Bundle + extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle + extension.swift"; sourceTree = "<group>"; };
+		72966DE821426B8A00EB0A8D /* WBDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 		72966DAA2142422500EB0A8D /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				72966DE721426B7500EB0A8D /* 测试 */,
 				72966DAD2142454A00EB0A8D /* WBBaseNavigationController.swift */,
 				72966DB12142464B00EB0A8D /* WBMainViewController.swift */,
 				72966DB32142466100EB0A8D /* WBBaseViewController.swift */,
@@ -237,6 +240,14 @@
 				72966DE52142500200EB0A8D /* Bundle + extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		72966DE721426B7500EB0A8D /* 测试 */ = {
+			isa = PBXGroup;
+			children = (
+				72966DE821426B8A00EB0A8D /* WBDemoViewController.swift */,
+			);
+			path = "测试";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +328,7 @@
 				72966DE221424A0700EB0A8D /* NSArray+Log.m in Sources */,
 				72966DE62142500200EB0A8D /* Bundle + extension.swift in Sources */,
 				72966DD921424A0700EB0A8D /* UIScreen+CZAddition.m in Sources */,
+				72966DE921426B8A00EB0A8D /* WBDemoViewController.swift in Sources */,
 				72966DBA2142469E00EB0A8D /* WBDiscoverViewController.swift in Sources */,
 				72966DAE2142454A00EB0A8D /* WBBaseNavigationController.swift in Sources */,
 				72966DB62142468800EB0A8D /* WBHomeViewController.swift in Sources */,
