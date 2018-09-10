@@ -18,6 +18,18 @@ class WBMainViewController: UITabBarController {
         
     }
     
+    /**
+     portrait  :竖屏 （肖像）
+     landscape :横屏 （风景画）
+     
+     - 使用代码控制设备的方向， 好处：可以再需要横屏的时候单独设置
+     - 在Main中设置的原因： 设置支持的方向之后，当前的控制器和子控制器都会遵守这个方向
+     - 如果是播放视频，通常是通过model展现的
+     */
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
     // 撰写微博点击事件
     // FIXME: 没有实现
     @objc private func composeStatus() {
