@@ -10,8 +10,9 @@ import UIKit
 
 class WBBaseViewController: UIViewController {
 
+    var tableView: UITableView?
+    
     //自定义导航栏
-    //
     lazy var navigationBar = WBNavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
     lazy var navItem = UINavigationItem()
     
@@ -35,6 +36,16 @@ extension WBBaseViewController {
      @objc func setupUI() {
         view.backgroundColor = UIColor.cz_random()
 
+        setupNavigationBar()
+        setupTableView()
+    }
+    
+    func setupTableView() {
+        tableView = UITableView(frame: view.bounds, style: .plain)
+        view.insertSubview(tableView!, belowSubview: navigationBar)
+    }
+    
+    func setupNavigationBar() {
         //添加导航条
         view.addSubview(navigationBar)
         navigationBar.items = [navItem]
