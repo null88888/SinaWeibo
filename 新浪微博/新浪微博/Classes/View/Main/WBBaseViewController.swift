@@ -39,5 +39,6 @@ extension WBBaseViewController {
         view.addSubview(navigationBar)
         navigationBar.items = [navItem]
         navigationBar.barTintColor = UIColor.cz_color(withHex: 0xF6F6F6)
+        navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.darkGray]
     }
 }
