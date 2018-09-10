@@ -38,5 +38,6 @@ extension WBBaseViewController {
         //添加导航条
         view.addSubview(navigationBar)
         navigationBar.items = [navItem]
+        navigationBar.barTintColor = UIColor.cz_color(withHex: 0xF6F6F6)
     }
 }

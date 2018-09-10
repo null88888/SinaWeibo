@@ -31,6 +31,6 @@ extension WBHomeViewController {
     override func setupUI() {
         super.setupUI()
 
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
     }
 }
