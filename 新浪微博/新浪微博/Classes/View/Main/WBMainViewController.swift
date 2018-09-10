@@ -34,6 +34,12 @@ class WBMainViewController: UITabBarController {
     // FIXME: 没有实现
     @objc private func composeStatus() {
         print("撰写微博")
+        
+        //测试方向旋转
+        let vc = UIViewController()
+        vc.view.backgroundColor = UIColor.cz_random()
+        let nav = UINavigationController(rootViewController: vc)
+        present(nav, animated: true, completion: nil)
     }
     
     // MARK: - 私有控件
