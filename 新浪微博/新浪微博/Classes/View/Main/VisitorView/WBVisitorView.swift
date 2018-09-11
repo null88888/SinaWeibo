@@ -11,6 +11,26 @@ import UIKit
 /// 访客视图
 class WBVisitorView: UIView {
 
+    /// 访客视图的信息字典 [imageNmae / mesage]
+    /// 提示：如果是首页 imageName == ""
+    var visitorInfo: [String: String]? {
+        didSet {
+            // 1> 获取字典信息
+            guard let imageName = visitorInfo?["imageName"],
+                let message = visitorInfo?["message"] else {
+                    return
+            }
+            
+            // 2> 设置消息
+            tipLabel.text = message
+            
+            // 3> 设置图像，首页不需要设置
+            if imageName == "" {
+                return
+            }
+            iconView.image = UIImage(named: imageName)
+        }
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
         
