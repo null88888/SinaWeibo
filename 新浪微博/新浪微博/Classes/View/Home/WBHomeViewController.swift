@@ -8,13 +8,21 @@
 
 import UIKit
 
+private let cellId = "cellId"
+
 class WBHomeViewController: WBBaseViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
     
+    //微博数据数组
+    private lazy var statusList = [String]()
+    
+    //加载数据
+    override func loadData() {
+        
+        for i in 0..<10 {
+            statusList.insert(i.description, at: 0)
+        }
+    }
+
     //显示好友
     @objc private func showFriends() {
         print(#function)
@@ -25,6 +33,22 @@ class WBHomeViewController: WBBaseViewController {
     }
 }
 
+// MARK: 表格视图代理方法
+extension WBHomeViewController {
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return statusList.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId)
+        cell?.textLabel?.text = statusList[indexPath.row]
+        
+        return cell!
+    }
+}
+
 // MARK: 设置界面
 extension WBHomeViewController {
     
@@ -32,5 +56,8 @@ extension WBHomeViewController {
         super.setupUI()
 
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
+        
+        //注册cell
+        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
 }

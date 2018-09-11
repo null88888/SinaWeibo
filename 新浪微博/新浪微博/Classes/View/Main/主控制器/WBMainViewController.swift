@@ -85,7 +85,7 @@ extension WBMainViewController {
     
     
     /// 使用字典创建一个子控制器
-    ///
+    /// 反射机制 NSClassFromString
     /// - Parameter dict: 信息字典
     /// - Returns: 子控制器
     private func controller(dict: [String: String]) -> UIViewController {

@@ -21,6 +21,7 @@ class WBBaseViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        loadData()
     }
     
     //重新 title 的 didSet
@@ -28,6 +29,11 @@ class WBBaseViewController: UIViewController {
         didSet {
             navItem.title = title
         }
+    }
+    
+    //由子类实现
+    func loadData() {
+    
     }
 }
 
@@ -44,8 +50,8 @@ extension WBBaseViewController {
     func setupTableView() {
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.insertSubview(tableView!, belowSubview: navigationBar)
-        tableView?.delegate = self;
-        tableView?.dataSource = self;
+        tableView?.delegate = self
+        tableView?.dataSource = self
     }
     
     func setupNavigationBar() {
