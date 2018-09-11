@@ -26,6 +26,7 @@ class WBVisitorView: UIView {
             
             // 3> 设置图像，首页不需要设置
             if imageName == "" {
+                startAnimation()
                 return
             }
             
@@ -35,6 +36,7 @@ class WBVisitorView: UIView {
             maskIconView.isHidden = true
         }
     }
+  
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -43,6 +45,21 @@ class WBVisitorView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    //旋转图标动画（首页）
+    private func startAnimation() {
+        
+        let anim = CABasicAnimation(keyPath: "transform.rotation")
+        anim.toValue = 2 * Double.pi
+        anim.repeatCount = MAXFLOAT
+        anim.duration = 15
+        
+        //动画完成不删除，如果 iconView 被释放，动画会一起销毁
+        //重要： 如果不设置点击别的页面再回来或者回到桌面再回来动画会停止
+        anim.isRemovedOnCompletion = false
+        
+        iconView.layer.add(anim, forKey: nil)
     }
     
     // MARK: - 私有控件
