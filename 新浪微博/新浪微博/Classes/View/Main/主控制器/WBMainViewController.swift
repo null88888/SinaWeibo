@@ -115,6 +115,7 @@ extension WBMainViewController {
         //创建视图控制器
         let vc = cls.init()
         vc.title = title;
+        //访客视图信息字典赋值
         vc.visitorInfoDictionary = visitorInfo
         vc.tabBarItem.image = UIImage(named: imageName)
         vc.tabBarItem.selectedImage = UIImage(named: imageName + "_selected")?.withRenderingMode(.alwaysOriginal)

@@ -28,7 +28,11 @@ class WBVisitorView: UIView {
             if imageName == "" {
                 return
             }
+            
             iconView.image = UIImage(named: imageName)
+            //其他控制器不需要显示这两个图片
+            houseIconView.isHidden = true
+            maskIconView.isHidden = true
         }
     }
     override init(frame: CGRect) {
@@ -77,6 +81,7 @@ extension WBVisitorView {
         addSubview(registerButton)
         addSubview(loginButton)
         
+        tipLabel.textAlignment = .center
         //2.取消autoresizing
         for v in subviews {
             v.translatesAutoresizingMaskIntoConstraints = false
