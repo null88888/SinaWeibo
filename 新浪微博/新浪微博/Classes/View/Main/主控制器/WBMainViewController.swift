@@ -66,8 +66,9 @@ extension WBMainViewController {
     
     /// 设置所有子控制器
     private func setupChildViewControllers() {
+        //在现在的很多应用程序中， 界面的创建都依赖网络的json
         let array = [
-            ["clsName": "WBHomeViewController", "title": "首页", "imageName": "tabbar_home"],
+            ["clsName": "WBHomeViewController", "title": "首页", "imageName": "tabbar_home", "visitorInfo":["imageName": "", "message":"哈哈哈"]],
             ["clsName": "WBMessageViewController", "title": "消息", "imageName": "tabbar_message_center"],
             //中间添加一个空的UIViewController，用于添加composeButton
             ["clsName": "UIViewController", "title": "", "imageName": ""],
@@ -88,12 +89,12 @@ extension WBMainViewController {
     /// 反射机制 NSClassFromString
     /// - Parameter dict: 信息字典
     /// - Returns: 子控制器
-    private func controller(dict: [String: String]) -> UIViewController {
+    private func controller(dict: [String: Any]) -> UIViewController {
         
         //1. 取字典内容
-        guard let clsName = dict["clsName"],
-            let title = dict["title"],
-            let imageName = dict["imageName"],
+        guard let clsName = dict["clsName"] as? String,
+            let title = dict["title"] as? String,
+            let imageName = dict["imageName"] as? String,
             let cls = NSClassFromString(Bundle.main.nameSpace + "." + clsName) as? UIViewController.Type
             
             else {
