@@ -11,6 +11,9 @@ import UIKit
 //class WBBaseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 class WBBaseViewController: UIViewController {
 
+    //用户登录标识
+    var userLogon = false
+
     var tableView: UITableView?
     var refreshControl: UIRefreshControl?
     //上拉刷新标识
@@ -44,13 +47,14 @@ class WBBaseViewController: UIViewController {
 extension WBBaseViewController {
     
      @objc func setupUI() {
-        view.backgroundColor = UIColor.cz_random()
+        view.backgroundColor = UIColor.white
 
         //取消自动缩进   默认缩进20
        // automaticallyAdjustsScrollViewInsets = false
         
         setupNavigationBar()
-        setupTableView()
+        userLogon ? setupTableView() : setupVisitorView()
+
     }
     
     func setupTableView() {
@@ -65,6 +69,14 @@ extension WBBaseViewController {
         tableView?.addSubview(refreshControl!)
         refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
     }
+    
+    func setupVisitorView() {
+        
+        let visitorView = UIView(frame: view.bounds)
+        visitorView.backgroundColor = UIColor.cz_random()
+        view.insertSubview(visitorView, belowSubview: navigationBar)
+    }
+    
     
     func setupNavigationBar() {
         //添加导航条
