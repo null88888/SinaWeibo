@@ -20,12 +20,19 @@ class WBHomeViewController: WBBaseViewController {
         print("开始加载数据")
         //模拟延迟
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            
             for i in 0..<15 {
-                self.statusList.insert(i.description, at: 0)
+                if self.isPullup {
+                    self.statusList.append("上拉 \(i.description)")
+                }else {
+                    self.statusList.insert(i.description, at: 0)
+                }
             }
             print("刷新表格")
             self.refreshControl?.endRefreshing()
             self.tableView?.reloadData()
+            //重置上拉刷新标识
+            self.isPullup = false
         }
     }
 
