@@ -28,7 +28,7 @@ class WBHomeViewController: WBBaseViewController {
                     self.statusList.insert(i.description, at: 0)
                 }
             }
-            print("刷新表格")
+            print("加载数据结束")
             self.refreshControl?.endRefreshing()
             self.tableView?.reloadData()
             //重置上拉刷新标识

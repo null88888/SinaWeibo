@@ -35,7 +35,8 @@ class WBBaseViewController: UIViewController {
     
     //由子类实现
     @objc func loadData() {
-    
+        //如果子类不实现该方法，结束刷新，不然刷新菊花一直存在
+        refreshControl?.endRefreshing()
     }
 }
 
