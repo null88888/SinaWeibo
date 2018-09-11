@@ -68,13 +68,23 @@ extension WBMainViewController {
     private func setupChildViewControllers() {
         //在现在的很多应用程序中， 界面的创建都依赖网络的json
         let array = [
-            ["clsName": "WBHomeViewController", "title": "首页", "imageName": "tabbar_home", "visitorInfo":["imageName": "", "message":"哈哈哈"]],
-            ["clsName": "WBMessageViewController", "title": "消息", "imageName": "tabbar_message_center"],
+            ["clsName": "WBHomeViewController", "title": "首页", "imageName": "tabbar_home",
+             "visitorInfo":["imageName": "", "message":"关注一些人，回这里看看有什么惊喜"]],
+            
+            ["clsName": "WBMessageViewController", "title": "消息", "imageName": "tabbar_message_center",
+             "visitorInfo":["imageName": "visitordiscover_image_message", "message":"登录后，别人评论你的微博，发给你的信息，动都在这里收到通知"]],
+            
             //中间添加一个空的UIViewController，用于添加composeButton
             ["clsName": "UIViewController", "title": "", "imageName": ""],
-            ["clsName": "WBDiscoverViewController", "title": "发现", "imageName": "tabbar_discover"],
-            ["clsName": "WBProfileViewController", "title": "我的", "imageName": "tabbar_profile"]
+            
+            ["clsName": "WBDiscoverViewController", "title": "发现", "imageName": "tabbar_discover",
+             "visitorInfo":["imageName": "visitordiscover_image_message", "message":"登录后，最新、最热微博尽在掌握，不再回与实事潮流擦肩而过"]],
+            
+            ["clsName": "WBProfileViewController", "title": "我的", "imageName": "tabbar_profile",
+             "visitorInfo":["imageName": "visitordiscover_image_profile", "message":"登录后，你的微博、相册、个人资料会显示在这里，展示给别人"]]
         ]
+        
+        //(array as NSArray).write(toFile: "/Users/ljw/Documents/学习区/swift学习", atomically: true)
         
         var arrayM = [UIViewController]()
         for dict in array {
@@ -95,7 +105,8 @@ extension WBMainViewController {
         guard let clsName = dict["clsName"] as? String,
             let title = dict["title"] as? String,
             let imageName = dict["imageName"] as? String,
-            let cls = NSClassFromString(Bundle.main.nameSpace + "." + clsName) as? UIViewController.Type
+            let cls = NSClassFromString(Bundle.main.nameSpace + "." + clsName) as? WBBaseViewController.Type,
+        let visitorInfo = dict["visitorInfo"] as? [String :String]
             
             else {
                 return UIViewController()
@@ -104,6 +115,7 @@ extension WBMainViewController {
         //创建视图控制器
         let vc = cls.init()
         vc.title = title;
+        vc.visitorInfoDictionary = visitorInfo
         vc.tabBarItem.image = UIImage(named: imageName)
         vc.tabBarItem.selectedImage = UIImage(named: imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
         
