@@ -26,6 +26,10 @@ class WBVisitorView: UIView {
     private lazy var iconView: UIImageView = UIImageView(image:
         UIImage(named: "visitordiscover_feed_image_smallicon"))
    
+    /// 灰色遮挡视图
+    private lazy var maskIconView: UIImageView = UIImageView(image:
+        UIImage(named: "visitordiscover_feed_mask_smallicon"))
+    
     /// 小房子
     private lazy var houseIconView: UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_house"))
    
@@ -43,10 +47,11 @@ class WBVisitorView: UIView {
 extension WBVisitorView {
     
     func setupUI() {
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.cz_color(withRed: 237, green: 237, blue: 237)
         
         //1.添加视图
         addSubview(iconView)
+        addSubview(maskIconView)
         addSubview(houseIconView)
         addSubview(tipLabel)
         addSubview(registerButton)
@@ -146,6 +151,11 @@ extension WBVisitorView {
             attribute: .width,
             multiplier: 1.0,
             constant: 0))
+        
+        // - 灰色遮罩视图
+        addConstraint(NSLayoutConstraint(item: maskIconView, attribute: .bottom, relatedBy: .equal, toItem: registerButton, attribute: .top, multiplier: 1.0, constant: margin * 0.5))
+        addConstraint(NSLayoutConstraint(item: maskIconView, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1.0, constant: 0))
+        addConstraint(NSLayoutConstraint(item: maskIconView, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0.5, constant: 0))
     }
 }
 
