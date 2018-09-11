@@ -17,10 +17,17 @@ class WBHomeViewController: WBBaseViewController {
     
     //加载数据
     override func loadData() {
-        
-        for i in 0..<15 {
-            statusList.insert(i.description, at: 0)
+        print("开始加载数据")
+        //模拟延迟
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            for i in 0..<15 {
+                self.statusList.insert(i.description, at: 0)
+            }
+            print("刷新表格")
+            self.refreshControl?.endRefreshing()
+            self.tableView?.reloadData()
         }
+        
     }
 
     //显示好友

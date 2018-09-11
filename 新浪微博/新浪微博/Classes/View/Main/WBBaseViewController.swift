@@ -12,6 +12,7 @@ import UIKit
 class WBBaseViewController: UIViewController {
 
     var tableView: UITableView?
+    var refreshControl: UIRefreshControl?
     
     //自定义导航栏
     lazy var navigationBar = WBNavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
@@ -32,7 +33,7 @@ class WBBaseViewController: UIViewController {
     }
     
     //由子类实现
-    func loadData() {
+    @objc func loadData() {
     
     }
 }
@@ -56,6 +57,11 @@ extension WBBaseViewController {
         tableView?.delegate = self
         tableView?.dataSource = self
         tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height - 20, left: 0, bottom: 0, right: 0)
+        
+        //添加刷新控件
+        refreshControl = UIRefreshControl()
+        tableView?.addSubview(refreshControl!)
+        refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
     }
     
     func setupNavigationBar() {
