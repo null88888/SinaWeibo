@@ -13,7 +13,8 @@ class WBBaseViewController: UIViewController {
 
     var tableView: UITableView?
     var refreshControl: UIRefreshControl?
-    
+    //上拉刷新标识
+    var isPullup = false
     //自定义导航栏
     lazy var navigationBar = WBNavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
     lazy var navItem = UINavigationItem()
@@ -85,4 +86,22 @@ extension WBBaseViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
+    
+    //在显示最后一行时，加上上拉刷新
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        let row = indexPath.row
+        let section = tableView.numberOfSections - 1
+        
+        if row < 0 || section < 0 {
+            return
+        }
+        
+        let count = tableView.numberOfRows(inSection: section)
+        
+        if row == (count - 1) && !isPullup {
+            print("上拉刷新")
+        }
+    }
+    
 }

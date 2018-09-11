@@ -19,7 +19,7 @@ class WBHomeViewController: WBBaseViewController {
     override func loadData() {
         print("开始加载数据")
         //模拟延迟
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             for i in 0..<15 {
                 self.statusList.insert(i.description, at: 0)
             }
@@ -27,7 +27,6 @@ class WBHomeViewController: WBBaseViewController {
             self.refreshControl?.endRefreshing()
             self.tableView?.reloadData()
         }
-        
     }
 
     //显示好友
