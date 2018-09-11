@@ -43,6 +43,9 @@ extension WBBaseViewController {
      @objc func setupUI() {
         view.backgroundColor = UIColor.cz_random()
 
+        //取消自动缩进   默认缩进20
+       // automaticallyAdjustsScrollViewInsets = false
+        
         setupNavigationBar()
         setupTableView()
     }
@@ -52,6 +55,7 @@ extension WBBaseViewController {
         view.insertSubview(tableView!, belowSubview: navigationBar)
         tableView?.delegate = self
         tableView?.dataSource = self
+        tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height - 20, left: 0, bottom: 0, right: 0)
     }
     
     func setupNavigationBar() {
