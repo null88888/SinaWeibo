@@ -69,10 +69,21 @@ extension WBMainViewController {
        
         //在现在的很多应用程序中， 界面的创建都依赖网络的json
         
-        //1.路径 / 2.加载NSData /3.反序列化转成数组
-        guard let path = Bundle.main.path(forResource: "main.json", ofType: nil),
-           let data = NSData(contentsOfFile: path),
-        let array = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [[String: Any]]
+        // 0. 获取沙盒 json 路径
+        let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let jsonPath = (docDir as NSString).appendingPathComponent("main.json")
+        
+        // 加载 data
+        var data = NSData(contentsOfFile: jsonPath)
+        
+        if data == nil {
+            let path = Bundle.main.path(forResource: "main.json", ofType: nil)
+            data = NSData(contentsOfFile: path!)
+        }
+    
+        // data 一定会有一个内容， 反序列化
+        // 反序列化转成数组
+        guard let array = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as? [[String: Any]]
             else {
                return
         }
