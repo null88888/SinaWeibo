@@ -66,31 +66,24 @@ extension WBMainViewController {
     
     /// 设置所有子控制器
     private func setupChildViewControllers() {
+       
         //在现在的很多应用程序中， 界面的创建都依赖网络的json
-        let array = [
-            ["clsName": "WBHomeViewController", "title": "首页", "imageName": "tabbar_home",
-             "visitorInfo":["imageName": "", "message":"关注一些人，回这里看看有什么惊喜"]],
-            
-            ["clsName": "WBMessageViewController", "title": "消息", "imageName": "tabbar_message_center",
-             "visitorInfo":["imageName": "visitordiscover_image_message", "message":"登录后，别人评论你的微博，发给你的信息，动都在这里收到通知"]],
-            
-            //中间添加一个空的UIViewController，用于添加composeButton
-            ["clsName": "UIViewController", "title": "", "imageName": ""],
-            
-            ["clsName": "WBDiscoverViewController", "title": "发现", "imageName": "tabbar_discover",
-             "visitorInfo":["imageName": "visitordiscover_image_message", "message":"登录后，最新、最热微博尽在掌握，不再回与实事潮流擦肩而过"]],
-            
-            ["clsName": "WBProfileViewController", "title": "我的", "imageName": "tabbar_profile",
-             "visitorInfo":["imageName": "visitordiscover_image_profile", "message":"登录后，你的微博、相册、个人资料会显示在这里，展示给别人"]]
-        ]
         
-        //(array as NSArray).write(toFile: "/Users/ljw/Documents/学习区/swift学习", atomically: true)
+        //1.路径 / 2.加载NSData /3.反序列化转成数组
+        guard let path = Bundle.main.path(forResource: "main.json", ofType: nil),
+           let data = NSData(contentsOfFile: path),
+        let array = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [[String: Any]]
+            else {
+               return
+        }
         
+        //遍历数组，循环创建控制器数组
         var arrayM = [UIViewController]()
-        for dict in array {
+        for dict in array! {
            arrayM.append(controller(dict: dict))
         }
         
+        //设置 tabBar 的子控制器
         viewControllers = arrayM
     }
     

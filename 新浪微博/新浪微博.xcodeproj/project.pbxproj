@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		724C92AB21489F7300724F28 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 724C92AA21489F7200724F28 /* main.json */; };
 		726EA6E6213FCE05005D8726 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA6E5213FCE05005D8726 /* AppDelegate.swift */; };
 		726EA6F8213FD200005D8726 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 726EA6F7213FD200005D8726 /* Assets.xcassets */; };
 		727A7D3A2145FF5100B5CDBE /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727A7D392145FF5100B5CDBE /* UIBarButtonItem+Extension.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		724C92AA21489F7200724F28 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		726EA6E2213FCE05005D8726 /* 新浪微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新浪微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		726EA6E5213FCE05005D8726 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		726EA6F1213FCE06005D8726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				72966DE321424AB100EB0A8D /* WeiBo-Bridge.h */,
 				726EA6F7213FD200005D8726 /* Assets.xcassets */,
 				726EA6F1213FCE06005D8726 /* Info.plist */,
+				724C92AA21489F7200724F28 /* main.json */,
 				72966DA12142422500EB0A8D /* Classes */,
 			);
 			path = "新浪微博";
@@ -342,6 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				724C92AB21489F7300724F28 /* main.json in Resources */,
 				726EA6F8213FD200005D8726 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
