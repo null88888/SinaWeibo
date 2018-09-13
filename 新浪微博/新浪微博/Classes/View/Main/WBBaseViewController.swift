@@ -12,7 +12,7 @@ import UIKit
 class WBBaseViewController: UIViewController {
 
     //用户登录标识
-    var userLogon = true
+    var userLogon = false
     
     var visitorInfoDictionary: [String :String]?
 
@@ -102,8 +102,13 @@ extension WBBaseViewController {
         //添加导航条
         view.addSubview(navigationBar)
         navigationBar.items = [navItem]
+        
+        // 1> 设置整个背景的渲染颜色
         navigationBar.barTintColor = UIColor.cz_color(withHex: 0xF6F6F6)
+        // 2> 设置nabBar 的字体颜色
         navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.darkGray]
+        // 3> 设置系统按钮的文字渲染颜色
+        navigationBar.tintColor = UIColor.orange
     }
 }
 
