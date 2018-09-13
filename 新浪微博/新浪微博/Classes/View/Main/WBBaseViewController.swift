@@ -12,7 +12,7 @@ import UIKit
 class WBBaseViewController: UIViewController {
 
     //用户登录标识
-    var userLogon = false
+    var userLogon = true
     
     var visitorInfoDictionary: [String :String]?
 
@@ -45,10 +45,22 @@ class WBBaseViewController: UIViewController {
     }
 }
 
+// MARK: -访客视图监听方法
+extension WBBaseViewController {
+    
+    @objc private func login() {
+        print("登录")
+    }
+    
+    @objc private func register() {
+        print("注册")
+    }
+}
+
 // MARK: -设置界面
 extension WBBaseViewController {
     
-     @objc func setupUI() {
+     @objc private func setupUI() {
         view.backgroundColor = UIColor.white
 
         //取消自动缩进   默认缩进20
@@ -59,7 +71,7 @@ extension WBBaseViewController {
 
     }
     
-    func setupTableView() {
+    @objc func setupTableView() {
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.insertSubview(tableView!, belowSubview: navigationBar)
         tableView?.delegate = self
@@ -77,6 +89,12 @@ extension WBBaseViewController {
         let visitorView = WBVisitorView(frame: view.bounds)
         view.insertSubview(visitorView, belowSubview: navigationBar)
         visitorView.visitorInfo = visitorInfoDictionary
+        
+        visitorView.loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
+        visitorView.registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
+        
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(register))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(login))
     }
     
     
