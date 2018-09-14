@@ -34,9 +34,13 @@
 		72966DE221424A0700EB0A8D /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 72966DD521424A0700EB0A8D /* NSArray+Log.m */; };
 		72966DE62142500200EB0A8D /* Bundle + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72966DE52142500200EB0A8D /* Bundle + extension.swift */; };
 		72966DE921426B8A00EB0A8D /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72966DE821426B8A00EB0A8D /* WBDemoViewController.swift */; };
+		F867D5A2E8EFCFEDDB252A29 /* Pods_____.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DC8EA324B3985B46672AF4A /* Pods_____.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A00D629C69B6BA28E2BC32A /* Pods-新浪微博.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-新浪微博.debug.xcconfig"; path = "Pods/Target Support Files/Pods-新浪微博/Pods-新浪微博.debug.xcconfig"; sourceTree = "<group>"; };
+		2D667D974D73A366392A147A /* Pods-新浪微博.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-新浪微博.release.xcconfig"; path = "Pods/Target Support Files/Pods-新浪微博/Pods-新浪微博.release.xcconfig"; sourceTree = "<group>"; };
+		4DC8EA324B3985B46672AF4A /* Pods_____.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_____.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		724C92AA21489F7200724F28 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		726EA6E2213FCE05005D8726 /* 新浪微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新浪微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		726EA6E5213FCE05005D8726 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,17 +91,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F867D5A2E8EFCFEDDB252A29 /* Pods_____.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		410259F471869E8A528180DA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0A00D629C69B6BA28E2BC32A /* Pods-新浪微博.debug.xcconfig */,
+				2D667D974D73A366392A147A /* Pods-新浪微博.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		726EA6D9213FCE05005D8726 = {
 			isa = PBXGroup;
 			children = (
 				726EA6E4213FCE05005D8726 /* 新浪微博 */,
 				726EA6E3213FCE05005D8726 /* Products */,
+				410259F471869E8A528180DA /* Pods */,
+				B279155D61F07E2BBF66A234 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -286,6 +302,14 @@
 			path = "测试";
 			sourceTree = "<group>";
 		};
+		B279155D61F07E2BBF66A234 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4DC8EA324B3985B46672AF4A /* Pods_____.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -293,9 +317,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 726EA6F4213FCE06005D8726 /* Build configuration list for PBXNativeTarget "新浪微博" */;
 			buildPhases = (
+				82EB079649FDC808AA764582 /* [CP] Check Pods Manifest.lock */,
 				726EA6DE213FCE05005D8726 /* Sources */,
 				726EA6DF213FCE05005D8726 /* Frameworks */,
 				726EA6E0213FCE05005D8726 /* Resources */,
+				4FD542CF168BF502F1DD420F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -351,6 +377,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4FD542CF168BF502F1DD420F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-新浪微博/Pods-新浪微博-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-新浪微博/Pods-新浪微博-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82EB079649FDC808AA764582 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-新浪微博-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		726EA6DE213FCE05005D8726 /* Sources */ = {
@@ -504,6 +579,7 @@
 		};
 		726EA6F5213FCE06005D8726 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A00D629C69B6BA28E2BC32A /* Pods-新浪微博.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -511,10 +587,7 @@
 				DEVELOPMENT_TEAM = SH3N75AN8Y;
 				INFOPLIST_FILE = "新浪微博/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.zwu.2017.weibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "新浪微博/WeiBo-Bridge.h";
@@ -525,6 +598,7 @@
 		};
 		726EA6F6213FCE06005D8726 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D667D974D73A366392A147A /* Pods-新浪微博.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -532,10 +606,7 @@
 				DEVELOPMENT_TEAM = SH3N75AN8Y;
 				INFOPLIST_FILE = "新浪微博/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.zwu.2017.weibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "新浪微博/WeiBo-Bridge.h";
