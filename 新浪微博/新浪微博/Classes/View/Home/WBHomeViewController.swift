@@ -21,12 +21,9 @@ class WBHomeViewController: WBBaseViewController {
         //用网络工具 加载微博数据
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         let params = ["access_token": "2.00qBOg6GQeJrgD05be1950c3ZE9w_D"]
-        WBNetworkManager.shared.get(urlString, parameters: params, progress: nil, success: { (_ , json) in
+        WBNetworkManager.shared.request(URLString: urlString, parameters: params) { (json, isSuccess) in
             
-            print(json ?? "没有数据")
-        }) { (_, error) in
-            
-            print("网络请求失败 \(error)")
+            print(json)
         }
         
         
