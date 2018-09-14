@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		724C92AB21489F7300724F28 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 724C92AA21489F7200724F28 /* main.json */; };
+		724F7F80214B9EA5000DDF02 /* WBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724F7F7F214B9EA5000DDF02 /* WBNetworkManager.swift */; };
 		726EA6E6213FCE05005D8726 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA6E5213FCE05005D8726 /* AppDelegate.swift */; };
 		726EA6F8213FD200005D8726 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 726EA6F7213FD200005D8726 /* Assets.xcassets */; };
 		727A7D3A2145FF5100B5CDBE /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727A7D392145FF5100B5CDBE /* UIBarButtonItem+Extension.swift */; };
@@ -34,14 +35,14 @@
 		72966DE221424A0700EB0A8D /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 72966DD521424A0700EB0A8D /* NSArray+Log.m */; };
 		72966DE62142500200EB0A8D /* Bundle + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72966DE52142500200EB0A8D /* Bundle + extension.swift */; };
 		72966DE921426B8A00EB0A8D /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72966DE821426B8A00EB0A8D /* WBDemoViewController.swift */; };
-		F867D5A2E8EFCFEDDB252A29 /* Pods_____.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DC8EA324B3985B46672AF4A /* Pods_____.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A00D629C69B6BA28E2BC32A /* Pods-新浪微博.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-新浪微博.debug.xcconfig"; path = "Pods/Target Support Files/Pods-新浪微博/Pods-新浪微博.debug.xcconfig"; sourceTree = "<group>"; };
 		2D667D974D73A366392A147A /* Pods-新浪微博.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-新浪微博.release.xcconfig"; path = "Pods/Target Support Files/Pods-新浪微博/Pods-新浪微博.release.xcconfig"; sourceTree = "<group>"; };
-		4DC8EA324B3985B46672AF4A /* Pods_____.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_____.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DC8EA324B3985B46672AF4A /* Pods_____.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_____.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		724C92AA21489F7200724F28 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
+		724F7F7F214B9EA5000DDF02 /* WBNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNetworkManager.swift; sourceTree = "<group>"; };
 		726EA6E2213FCE05005D8726 /* 新浪微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新浪微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		726EA6E5213FCE05005D8726 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		726EA6F1213FCE06005D8726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,7 +92,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F867D5A2E8EFCFEDDB252A29 /* Pods_____.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +105,14 @@
 				2D667D974D73A366392A147A /* Pods-新浪微博.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		724F7F7E214B9E8B000DDF02 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				724F7F7F214B9EA5000DDF02 /* WBNetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		726EA6D9213FCE05005D8726 = {
@@ -184,6 +192,7 @@
 		72966DA32142422500EB0A8D /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				724F7F7E214B9E8B000DDF02 /* Network */,
 				72966DE421424FC900EB0A8D /* Extensions */,
 				72966DBD21424A0700EB0A8D /* Additions */,
 			);
@@ -433,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72966DB42142466100EB0A8D /* WBBaseViewController.swift in Sources */,
+				724F7F80214B9EA5000DDF02 /* WBNetworkManager.swift in Sources */,
 				72966DDB21424A0700EB0A8D /* NSString+CZBase64.m in Sources */,
 				72966DBC214246A800EB0A8D /* WBProfileViewController.swift in Sources */,
 				72966DDE21424A0700EB0A8D /* NSObject+CZRuntime.m in Sources */,
@@ -587,7 +597,10 @@
 				DEVELOPMENT_TEAM = SH3N75AN8Y;
 				INFOPLIST_FILE = "新浪微博/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.zwu.2017.weibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "新浪微博/WeiBo-Bridge.h";
@@ -606,7 +619,10 @@
 				DEVELOPMENT_TEAM = SH3N75AN8Y;
 				INFOPLIST_FILE = "新浪微博/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.zwu.2017.weibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "新浪微博/WeiBo-Bridge.h";
