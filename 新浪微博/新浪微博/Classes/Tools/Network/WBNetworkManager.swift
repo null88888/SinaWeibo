@@ -31,15 +31,15 @@ class WBNetworkManager: AFHTTPSessionManager {
     ///   - completion:    完成回调（json字典/数组， 是否成功）
     func request(method: WBHTTPMethod = .GET, URLString: String, parameters: [String: Any?], completion:@escaping (_ json: Any?, _ isSuccess: Bool)->()) {
         
-        let success = { (task: URLSessionDataTask, json: Any?)->() in
-            completion(json, true)
-            
-        }
-        
-        let failure = { (task: URLSessionDataTask, error: NSError)->() in
-            completion(nil, false)
-            
-        }
+//        let success = { (task: URLSessionDataTask, json: Any?)->() in
+//            completion(json, true)
+//
+//        }
+//
+//        let failure = { (task: URLSessionDataTask, error: NSError)->() in
+//            completion(nil, false)
+//
+//        }
         
         
         if method == .GET {

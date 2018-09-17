@@ -19,14 +19,10 @@ class WBHomeViewController: WBBaseViewController {
     override func loadData() {
         
         //用网络工具 加载微博数据
-        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
-        let params = ["access_token": "2.00qBOg6GQeJrgD05be1950c3ZE9w_D"]
-        WBNetworkManager.shared.request(URLString: urlString, parameters: params) { (json, isSuccess) in
-            
-            print(json)
+        WBNetworkManager.shared.statusList { (list, isSuccess) in
+            print(list ?? "")
         }
-        
-        
+
         print("开始加载数据")
         //模拟延迟
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
